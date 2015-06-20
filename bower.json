@@ -1,0 +1,19 @@
+{
+  "name": "pagejsdemo",
+  "version": "0.0.0",
+  "authors": [
+    "massimobiagioli <biagiolimassimo@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "page": "visionmedia/page.js#~1.6.3",
+    "jquery": "~2.1.4"
+  }
+}

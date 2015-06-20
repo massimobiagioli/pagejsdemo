@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Page.js Demo</title>
+<script src="bower_components/page/page.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+
+<script>
+	$(function() {
+  		function home() {
+			$('#contenuto').html('Benvenuto nella Home Page!');
+		}
+		
+		function pagina1() {
+			$('#contenuto').html('Sei in Pagina1');
+		}
+		
+		function pagina2(ctx) {
+			$('#contenuto').html('Sei in Pagina2 - parametro: ' + ctx.params.parametro);
+		}
+		
+		function pagina3() {
+			page('/Pagina2/9876');
+		}
+		
+		function initRouter() {
+			page('/', home);
+			page('/Pagina1', pagina1);
+			page('/Pagina2/:parametro', pagina2);
+			page('/Pagina3', pagina3);
+			page();
+		}
+		
+		initRouter();
+	});
+</script>
+</head>
+
+<body>
+	<h1>Navigazione</h1>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/Pagina1">Pagina 1</a></li>
+		<li><a href="/Pagina2/1234">Pagina 2</a></li>
+		<li><a href="/Pagina3">Pagina 3</a></li>
+	</ul>
+	<div id="contenuto"></div>
+</body>
+</html>
